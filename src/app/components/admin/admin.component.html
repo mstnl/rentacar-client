@@ -1,0 +1,39 @@
+<div class="container mt-5">
+    <h2>Admin Paneli</h2>
+    <button class="btn btn-primary mb-3" (click)="yeniAracEkle()">Yeni Araç Ekle</button>
+    <div class="row">
+      <div class="col-md-4" *ngFor="let arac of araclar">
+        <div class="card mb-4">
+          <img class="card-img-top" [src]="arac.resimUrl" alt="Arac resmi">
+          <div class="card-body">
+            <h5 class="card-title">{{ arac.marka }} {{ arac.model }}</h5>
+            <p class="card-text">{{ arac.tipi }}</p>
+            <p class="card-text">{{ arac.gunlukKiralamaUcreti }} TL / gün</p>
+            <button class="btn btn-secondary" (click)="guncelle(arac)">Güncelle</button>
+            <button class="btn btn-danger" (click)="sil(arac.id)">Sil</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h3>Kullanıcılar</h3>
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Eposta</th>
+          <th>İşlemler</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let kullanici of kullanicilar">
+          <td>{{ kullanici.id }}</td>
+          <td>{{ kullanici.eposta }}</td>
+          <td>
+            <button class="btn btn-secondary" (click)="kullaniciGuncelle(kullanici)">Güncelle</button>
+            <button class="btn btn-danger" (click)="kullaniciSil(kullanici.id)">Sil</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

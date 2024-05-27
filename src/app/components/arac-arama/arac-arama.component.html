@@ -1,0 +1,28 @@
+<div class="container mt-5">
+    <h2>Araç Arama</h2>
+    <form (ngSubmit)="onSearch()">
+      <div class="form-group">
+        <label for="marka">Marka:</label>
+        <input type="text" class="form-control" id="marka" [(ngModel)]="marka" name="marka">
+      </div>
+      <div class="form-group">
+        <label for="model">Model:</label>
+        <input type="text" class="form-control" id="model" [(ngModel)]="model" name="model">
+      </div>
+      <button type="submit" class="btn btn-primary mt-3">Ara</button>
+    </form>
+    <div class="row mt-4">
+      <div class="col-md-4" *ngFor="let arac of araclar">
+        <div class="card mb-4">
+          <img class="card-img-top" [src]="arac.resimUrl" alt="Arac resmi">
+          <div class="card-body">
+            <h5 class="card-title">{{ arac.marka }} {{ arac.model }}</h5>
+            <p class="card-text">{{ arac.tipi }}</p>
+            <p class="card-text">{{ arac.gunlukKiralamaUcreti }} TL / gün</p>
+            <button class="btn btn-primary" (click)="rezervasyonYap(arac)">Rezerve Et</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

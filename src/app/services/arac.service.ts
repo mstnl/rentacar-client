@@ -20,7 +20,7 @@ export class AracService {
   }
 
   updateArac(arac: Arac): Observable<Arac> {
-    return this.http.put<Arac>(`${this.apiUrl}/${arac.id}`, arac);
+    return this.http.put<Arac>(`${this.apiUrl}/${arac.Id}`, arac);
   }
 
   deleteArac(aracId: number): Observable<void> {

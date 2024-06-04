@@ -1,6 +1,7 @@
 import { Rezervasyon } from "./rezervasyon";
 
 export interface Arac {
+    Id: any;
     aracId: number;
     marka?: string;
     model?: string;
